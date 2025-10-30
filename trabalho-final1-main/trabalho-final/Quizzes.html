@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remember</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-blue: #0d3b66;
+      --footer-blue: #003366;
+      --background-white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #011A33;
+      color: var(--background-white);
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background-color: var(--primary-blue);
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo i {
+      color: #ff8c2f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0 auto; /* centraliza o nav no meio */
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s, background-color 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* === LINK ATIVO === */
+    .nav-links a.active {
+      background-color: #1b5ebc;
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary-blue), var(--footer-blue));
+      color: var(--background-white);
+      padding: 8rem 1rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255, 140, 47, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .page-hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-regular fa-bell"></i>
+        <span>Remember</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="inicio.html" class="active">Início</a></li>
+        <li><a href="catalogo.html">Catálogos</a></li>
+        <li><a href="Quizzes.html">Quizzes</a></li>
+        <li><a href="Chats.html">Chats</a></li>
+        <li><a href="pastas.html">Minhas pastas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Quizzes</h1>
+        <p>Descubra qual personagem vive dentro de você!</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  
+    const links = document.querySelectorAll('.nav-links a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Painel Multimídia com Carrossel</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #061b48;
+    color: white;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  h2 {
+    margin: 20px 0 10px 20px;
+    font-size: 22px;
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .cards {
+    display: flex;
+    overflow-x: hidden; /* esconde o resto fora da área */
+    gap: 15px;
+    padding: 0 20px 15px;
+    scroll-behavior: smooth;
+  }
+
+  .card {
+    flex: 0 0 180px;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Botões do carrossel */
+  .btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: rgba(255,255,255,0.4);
+  }
+
+  .btn-left {
+    left: 5px;
+  }
+
+  .btn-right {
+    right: 5px;
+  }
+</style>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-regular fa-bell"></i>
+        <span>Remember</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="inicio.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogos</a></li>
+        <li><a href="Quizzes.html">Quizzes</a></li>
+        <li><a href="Chats.html">Chats</a></li>
+        <li><a href="pastas.html">Minhas pastas</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <img src="" alt="Perfil" class="avatar">
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="section">
+    <h2>Filmes</h2>
+    <button class="btn btn-left" onclick="scrollLeft('filmes')">⟵</button>
+    <button class="btn btn-right" onclick="scrollRight('filmes')">⟶</button>
+    <div class="cards" id="filmes">
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81k4bAw3jhL._AC_UF1000,1000_QL80_.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/7/79/The_Hate_U_Give.png');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/8/8b/Django_Unchained_Poster.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/6/63/The_Hunger_Games_Poster.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/pt/7/7c/Que_Horas_Ela_Volta_poster.jpg');"></div>
+       <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81k4bAw3jhL._AC_UF1000,1000_QL80_.jpg');"></div>
+        <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81k4bAw3jhL._AC_UF1000,1000_QL80_.jpg');"></div>
+         <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81k4bAw3jhL._AC_UF1000,1000_QL80_.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- LIVROS -->
+  <div class="section">
+    <h2> Livros</h2>
+    <button class="btn btn-left" onclick="scrollLeft('livros')">⟵</button>
+    <button class="btn btn-right" onclick="scrollRight('livros')">⟶</button>
+    <div class="cards" id="livros">
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/61UOZ8xV8gL.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/71U1IYhIYjL.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/71R1u9pT9mL.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81LxykDDe8L.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81LxykDDe8L.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81LxykDDe8L.jpg');"></div><div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81LxykDDe8L.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/81LxykDDe8L.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- SÉRIES -->
+  <div class="section">
+    <h2> Séries</h2>
+    <button class="btn btn-left" onclick="scrollLeft('series')">⟵</button>
+    <button class="btn btn-right" onclick="scrollRight('series')">⟶</button>
+    <div class="cards" id="series">
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/91JQx9+Zs5L._AC_UF894,1000_QL80_.jpg');"></div>
+      <div class="card" style="background-image:url('https://m.media-amazon.com/images/I/71m+Cx5JcvL.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/9/98/Brooklyn_Nine-Nine_season_4.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/7/7e/The_Big_Bang_Theory_season_12.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/f/fd/The_Resident_season_5.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/f/fd/The_Resident_season_5.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/f/fd/The_Resident_season_5.jpg');"></div>
+      <div class="card" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/f/fd/The_Resident_season_5.jpg');"></div>
+    </div>
+  </div>
+
+  <script>
+    function scrollLeft(id) {
+      document.getElementById(id).scrollBy({
+        left: -300, // quantidade que desliza
+        behavior: 'smooth'
+      });
+    }
+
+    function scrollRight(id) {
+      document.getElementById(id).scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+</html>
